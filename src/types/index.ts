@@ -67,3 +67,13 @@ export interface SEOData {
 export interface PageProps {
   metadata?: SEOData;
 }
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  initial: string;
+  rating: number;
+  text: string;
+  service: string;
+  date: string;
+}
