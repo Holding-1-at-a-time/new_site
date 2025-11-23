@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://onedetailatatime.com'),
+  metadataBase: new URL('https://odaat1.com'),
   alternates: {
     canonical: "/",
   },
@@ -90,7 +90,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://onedetailatatime.com",
+    "@id": "https://odaat1.com",
     "name": "One Detail At A Time LLC",
     "image": "/images/logo.svg",
     "description": "Professional car detailing services in San Antonio, TX. We bring your vehicle back to showroom condition with attention to every detail.",
@@ -107,7 +107,7 @@ export default function RootLayout({
       "latitude": "29.4241",
       "longitude": "-98.4936"
     },
-    "url": "https://onedetailatatime.com",
+    "url": "https://odaat1.com",
     "telephone": "(726) 207-1007",
     "email": "rromerojr1@gmail.com",
     "serviceArea": {

@@ -281,9 +281,9 @@ const jsonLd = {
   provider: {
     '@type': 'AutoRepair',
     name: 'One Detail At A Time LLC',
-    image: 'https://1detailatatime.com/logo.png',
-    '@id': 'https://1detailatatime.com',
-    url: 'https://1detailatatime.com',
+    image: 'https://odaat1.com/logo.png',
+    '@id': 'https://odaat1.com',
+    url: 'https://odaat1.com',
     telephone: '(726) 207-1007',
     priceRange: '$$',
     address: {

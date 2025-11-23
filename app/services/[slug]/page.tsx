@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       title: `${service.name} | One Detail At A Time LLC`,
       description: service.shortDescription,
       type: 'website',
-      url: `https://www.onedetailatatime.com/services/${service.slug}`,
+      url: `https://www.odaat1.com/services/${service.slug}`,
     },
   };
 }
@@ -64,9 +64,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
     provider: {
       '@type': 'LocalBusiness',
       name: businessInfo.name,
-      image: 'https://www.onedetailatatime.com/logo.png', // Replace with actual logo URL
-      '@id': 'https://www.onedetailatatime.com',
-      url: 'https://www.onedetailatatime.com',
+      image: 'https://www.odaat1.com/logo.png', // Replace with actual logo URL
+      '@id': 'https://www.odaat1.com',
+      url: 'https://www.odaat1.com',
       telephone: businessInfo.phone,
       priceRange: '$', // Or generate dynamically
       address: {
