@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-  experimental: {
-    optimizePackageImports: ['@/components', '@/lib'],
-  },
 };
 
 export default nextConfig;
