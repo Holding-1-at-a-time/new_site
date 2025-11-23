@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { services, businessInfo } from '../src/lib/data';
 
 export default function Home() {
@@ -63,11 +62,11 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.slice(0, 6).map((service) => (
+            {services?.slice(0, 6).map((service) => (
               <div key={service.id} className="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-teal-500 transition-all duration-300 group">
                 <div className="h-48 bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center">
                   <div className="text-white text-4xl font-bold opacity-20">
-                    {service.name.split(' ').map(word => word.charAt(0)).join('').slice(0, 2)}
+                    {service.name?.split(' ').map(word => word.charAt(0)).join('').slice(0, 2) || 'N/A'}
                   </div>
                 </div>
                 <div className="p-6">

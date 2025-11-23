@@ -1,5 +1,4 @@
 import type { Service, BusinessInfo } from '../types';
-import type { Service, BusinessInfo } from '@/types';
 
 // Business Information
 export const businessInfo: BusinessInfo = {
