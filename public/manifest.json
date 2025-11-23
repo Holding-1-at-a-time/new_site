@@ -1,0 +1,24 @@
+{
+  "name": "One Detail At A Time LLC",
+  "short_name": "One Detail",
+  "description": "Professional car detailing services in San Antonio, TX. Exterior wash, interior cleaning, paint correction, ceramic coating, and full detail packages.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00ae98",
+  "background_color": "#111827",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "automotive", "services"],
+  "lang": "en-US"
+}
