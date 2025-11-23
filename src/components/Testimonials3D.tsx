@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Testimonial } from '../types';
 
 const TESTIMONIALS: Testimonial[] = [
@@ -108,28 +108,63 @@ export default function Testimonials3D() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Auto-rotation effect
+  // Intersection Observer to detect when carousel is visible
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when at least 10% of the carousel is visible
+        rootMargin: '50px', // Start animation slightly before it comes into view
+      }
+    );
+
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+
+    return () => {
+      if (carouselRef.current) {
+        observer.unobserve(carouselRef.current);
+      }
+    };
+  }, []);
+
+  // Auto-rotation effect - only when visible
+  useEffect(() => {
+    if (!isAutoPlaying || !isVisible) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === TESTIMONIALS.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, isVisible]);
 
   // Navigation functions
+
   const goToSlide = useCallback((index: number) => {
+    // Clear any existing timeout
+    if (autoPlayTimeoutRef.current) {
+      clearTimeout(autoPlayTimeoutRef.current);
+    }
+
     setCurrentIndex(index);
     setIsAutoPlaying(false);
     
     // Resume auto-play after 10 seconds
-    setTimeout(() => {
+    autoPlayTimeoutRef.current = setTimeout(() => {
       setIsAutoPlaying(true);
+      autoPlayTimeoutRef.current = null;
     }, 10000);
   }, []);
 
@@ -194,7 +229,8 @@ export default function Testimonials3D() {
         </div>
 
         {/* 3D Testimonials Carousel */}
-        <div 
+        <div
+          ref={carouselRef}
           className="relative testimonials-3d max-w-4xl mx-auto h-96 md:h-[500px] overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -202,8 +238,10 @@ export default function Testimonials3D() {
           role="region"
           aria-label="Testimonials carousel"
         >
-          <div 
+          <div
             className={`relative w-full h-full testimonial-carousel ${
+              isVisible ? 'is-visible' : ''
+            } ${
               isAutoPlaying ? '' : 'paused'
             }`}
             style={{

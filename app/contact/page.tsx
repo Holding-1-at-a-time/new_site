@@ -20,7 +20,8 @@ export default function ContactPage() {
       <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Contact One Detail At A Time
+            Contact  
+            One Detail At A Time
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Ready to give your vehicle the professional care it deserves? Get in touch with us today for a free quote or to schedule your service.

@@ -158,47 +158,96 @@ a:hover {
   background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
 }
 /* 3D Testimonials Animation Keyframes */
+/* Optimized 3D rotation with reduced perspective and translateZ for better performance */
 @keyframes rotate3d {
   0% {
-    transform: perspective(2000px) rotateY(0deg) translateZ(0px);
+    transform: perspective(1200px) rotateY(0deg) translateZ(0px);
     opacity: 1;
   }
   25% {
-    transform: perspective(2000px) rotateY(90deg) translateZ(200px);
+    transform: perspective(1200px) rotateY(90deg) translateZ(100px);
     opacity: 0.7;
   }
   50% {
-    transform: perspective(2000px) rotateY(180deg) translateZ(400px);
+    transform: perspective(1200px) rotateY(180deg) translateZ(150px);
     opacity: 0.3;
   }
   75% {
-    transform: perspective(2000px) rotateY(270deg) translateZ(200px);
+    transform: perspective(1200px) rotateY(270deg) translateZ(100px);
     opacity: 0.7;
   }
   100% {
-    transform: perspective(2000px) rotateY(360deg) translateZ(0px);
+    transform: perspective(1200px) rotateY(360deg) translateZ(0px);
+    opacity: 1;
+  }
+}
+
+/* Lightweight 2D rotation fallback for reduced motion or low-end devices */
+@keyframes rotate2d {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-10px) scale(0.98);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(0) scale(0.95);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateX(10px) scale(0.98);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) scale(1);
     opacity: 1;
   }
 }
 
 @keyframes cardActive {
   0% {
-    transform: perspective(2000px) rotateY(0deg) translateZ(0px) scale(1);
+    transform: perspective(1200px) rotateY(0deg) translateZ(0px) scale(1);
     opacity: 1;
   }
   100% {
-    transform: perspective(2000px) rotateY(0deg) translateZ(300px) scale(1.05);
+    transform: perspective(1200px) rotateY(0deg) translateZ(150px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* 2D fallback for cardActive */
+@keyframes cardActive2d {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05);
     opacity: 1;
   }
 }
 
 @keyframes cardInactive {
   0% {
-    transform: perspective(2000px) rotateY(0deg) translateZ(-100px) scale(0.9);
+    transform: perspective(1200px) rotateY(0deg) translateZ(-50px) scale(0.9);
     opacity: 0.6;
   }
   100% {
-    transform: perspective(2000px) rotateY(0deg) translateZ(-200px) scale(0.8);
+    transform: perspective(1200px) rotateY(0deg) translateZ(-100px) scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+/* 2D fallback for cardInactive */
+@keyframes cardInactive2d {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8);
     opacity: 0.3;
   }
 }
@@ -216,13 +265,15 @@ a:hover {
 
 /* 3D Testimonials Utility Classes */
 .testimonials-3d {
-  perspective: 2000px;
+  perspective: 1200px;
 }
 
 .testimonial-card {
   transform-style: preserve-3d;
   transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
   backface-visibility: hidden;
+  /* GPU acceleration hint */
+  will-change: transform;
 }
 
 .testimonial-card.active {
@@ -236,8 +287,16 @@ a:hover {
 }
 
 .testimonial-carousel {
-  animation: rotate3d 20s linear infinite;
   transform-style: preserve-3d;
+  /* GPU acceleration hint */
+  will-change: transform;
+  /* Animation only runs when carousel is visible */
+  animation: none;
+}
+
+/* Only animate when carousel is visible and not paused */
+.testimonial-carousel.is-visible:not(.paused) {
+  animation: rotate3d 25s linear infinite;
 }
 
 .testimonial-carousel.paused {
@@ -246,6 +305,58 @@ a:hover {
 
 .dot-active {
   animation: dotActive 300ms ease-out forwards;
+}
+
+/* Reduced Motion Support - Accessibility */
+/* Users who prefer reduced motion get simpler 2D animations or static states */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable 3D carousel rotation, use subtle 2D alternative */
+  .testimonial-carousel.is-visible:not(.paused) {
+    animation: rotate2d 30s ease-in-out infinite;
+  }
+  
+  /* Simplify card animations to 2D transforms */
+  .testimonial-card.active {
+    animation: cardActive2d 700ms ease-out forwards;
+  }
+  
+  .testimonial-card.inactive {
+    animation: cardInactive2d 700ms ease-out forwards;
+  }
+  
+  /* Remove will-change to reduce resource usage */
+  .testimonial-card,
+  .testimonial-carousel {
+    will-change: auto;
+  }
+  
+  /* Simplify dot animation */
+  .dot-active {
+    animation-duration: 200ms;
+  }
+}
+
+/* For users who want no motion at all */
+@media (prefers-reduced-motion: reduce) and (prefers-contrast: more) {
+  .testimonial-carousel.is-visible:not(.paused) {
+    animation: none;
+  }
+  
+  .testimonial-card.active,
+  .testimonial-card.inactive {
+    animation: none;
+    transition: opacity 300ms ease;
+  }
+  
+  .testimonial-card.active {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  .testimonial-card.inactive {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
 }
 
 /* Image optimization */
