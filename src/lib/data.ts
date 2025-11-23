@@ -12,13 +12,13 @@ export const businessInfo: BusinessInfo = {
   zipCode: "78233",
   serviceArea: "San Antonio, TX",
   hours: {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM", 
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 5:00 PM",
-    sunday: "Closed"
+    monday: "Closed",
+    tuesday: "7:00 AM - 9:00 PM",
+    wednesday: "7:00 AM - 9:00 PM",
+    thursday: "7:00 AM - 9:00 PM",
+    friday: "7:00 AM - 9:00 PM",
+    saturday: "7:00 AM - 9:00 PM",
+    sunday: "7:00 AM - 9:00 PM"
   },
   socialMedia: {
     google: "https://www.google.com/search?q=one+detail+at+a+time+llc+san+antonio",

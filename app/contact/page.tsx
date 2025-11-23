@@ -208,7 +208,7 @@ export default function ContactPage() {
                   </div>
                   <div className="mt-6 pt-6 border-t border-gray-700">
                     <p className="text-sm text-gray-400">
-                      * Emergency and after-hours services available by appointment
+                      * We offer convenient extended hours seven days a week for your convenience
                     </p>
                   </div>
                 </div>

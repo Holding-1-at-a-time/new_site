@@ -127,8 +127,26 @@ export default async function ServicePage({ params }: ServicePageProps) {
         {/* 4. What's Included Section */}
         <WhatsIncluded service={service} />
 
-        {/* 4. Local Benefits Section */}
+        {/* 5. Before/After Showcase */}
+        <BeforeAfterShowcase service={service} />
+
+        {/* 6. Local Benefits Section */}
         <LocalBenefits service={service} />
+
+        {/* 7. Service Areas Section */}
+        <ServiceAreas service={service} />
+
+        {/* 8. Why Choose This Service Section */}
+        <WhyChoose service={service} />
+
+        {/* 9. Process Section */}
+        <Process service={service} />
+
+        {/* 10. FAQ Accordion Section */}
+        <FAQAccordion service={service} />
+
+        {/* 11. Final CTA Section */}
+        <FinalCTA service={service} />
 
         {/* 5. Service Areas Section */}
         <ServiceAreas service={service} />
