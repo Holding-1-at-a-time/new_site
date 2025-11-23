@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black" />
-        <div className="absolute inset-0 bg-[url('/images/hero-pattern.svg')] opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-teal-900/5 to-transparent" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-teal-400 bg-clip-text text-transparent">

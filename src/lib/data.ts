@@ -1,4 +1,5 @@
 import type { Service, BusinessInfo } from '../types';
+import { generateLocalSEOKeywords } from './utils';
 
 // Business Information
 export const businessInfo: BusinessInfo = {
@@ -25,10 +26,9 @@ export const businessInfo: BusinessInfo = {
   }
 };
 
-// Services Data
+// Services Data with comprehensive SEO optimization
 export const services: Service[] = [
   {
-  
     id: "exterior-hand-wash-sealant",
     name: "Exterior Hand Wash & Sealant",
     slug: "exterior-hand-wash-sealant",
@@ -97,6 +97,15 @@ export const services: Service[] = [
       "/images/exterior-wash-1.jpg",
       "/images/exterior-wash-2.jpg",
       "/images/exterior-wash-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Exterior Hand Wash & Sealant"),
+    metaDescription: "Professional exterior hand wash and sealant service in San Antonio, TX. Premium protection for your vehicle's paint with lasting results. Call (726) 207-1007 today!",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Perfect for San Antonio's climate with UV protection",
+      "Removes Central Texas dust and pollen buildup", 
+      "Protects against hill country road grime",
+      "Ideal for vehicles driven on I-35 and Loop 410"
     ]
   },
   {
@@ -168,6 +177,15 @@ export const services: Service[] = [
       "/images/interior-clean-1.jpg",
       "/images/interior-clean-2.jpg", 
       "/images/interior-clean-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Interior Deep Cleansing"),
+    metaDescription: "Expert interior deep cleansing services in San Antonio, TX. Remove stains, odors, and bacteria from your vehicle's interior. Professional car detailing in San Antonio area.",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Eliminates San Antonio's high humidity-related odors",
+      "Removes Central Texas pollen and dust from interiors",
+      "Perfect for families with allergies and sensitivities",
+      "Extends life of leather seats in hot Texas climate"
     ]
   },
   {
@@ -239,6 +257,15 @@ export const services: Service[] = [
       "/images/paint-correction-1.jpg",
       "/images/paint-correction-2.jpg",
       "/images/paint-correction-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Paint Correction"),
+    metaDescription: "Professional paint correction services in San Antonio, TX. Remove swirl marks, scratches, and oxidation to restore your vehicle's paint to like-new condition.",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Removes Central Texas sun damage and oxidation",
+      "Perfect for vehicles exposed to San Antonio's intense UV rays",
+      "Restores paint on cars driven extensively on Texas highways",
+      "Increases resale value for San Antonio area vehicles"
     ]
   },
   {
@@ -309,6 +336,15 @@ export const services: Service[] = [
       "/images/ceramic-coating-1.jpg",
       "/images/ceramic-coating-2.jpg",
       "/images/ceramic-coating-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Ceramic Coating"),
+    metaDescription: "Professional ceramic coating services in San Antonio, TX. Ultimate paint protection with 5+ year warranty. Hydrophobic coating for easier maintenance in Texas climate.",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Perfect protection against San Antonio's intense UV rays",
+      "Resistant to Central Texas acid rain and environmental damage",
+      "Ideal for high-end vehicles in Alamo Heights area",
+      "Reduces maintenance in dusty Texas hill country conditions"
     ]
   },
   {
@@ -379,6 +415,15 @@ export const services: Service[] = [
       "/images/headlight-restoration-1.jpg",
       "/images/headlight-restoration-2.jpg", 
       "/images/headlight-restoration-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Headlight Restoration"),
+    metaDescription: "Professional headlight restoration in San Antonio, TX. Improve nighttime visibility and safety with crystal clear headlights. Affordable alternative to replacement.",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Essential for safe driving on San Antonio highways at night",
+      "Removes damage from Texas sun and heat exposure",
+      "Improves visibility on I-35 and Loop 410 at night",
+      "Cost-effective solution for older vehicles common in San Antonio"
     ]
   },
   {
@@ -450,6 +495,15 @@ export const services: Service[] = [
       "/images/full-detail-1.jpg",
       "/images/full-detail-2.jpg",
       "/images/full-detail-3.jpg"
+    ],
+    keywords: generateLocalSEOKeywords("Full Detail Package"),
+    metaDescription: "Complete car detailing package in San Antonio, TX. Full interior and exterior detailing service with paint correction and protection. Best value professional detailing.",
+    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    localBenefits: [
+      "Perfect preparation for San Antonio's hot and dusty conditions",
+      "Comprehensive protection against Texas sun and road debris",
+      "Ideal for luxury vehicles in prestigious San Antonio neighborhoods",
+      "Best value for complete vehicle transformation"
     ]
   }
 ];

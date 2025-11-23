@@ -10,6 +10,8 @@ import FAQAccordion from '../../../src/components/service/FAQAccordion';
 import FinalCTA from '../../../src/components/service/FinalCTA';
 import ServiceAreas from '../../../src/components/service/ServiceAreas';
 import LocalBenefits from '../../../src/components/service/LocalBenefits';
+import ServiceGallery from '../../../src/components/service/ServiceGallery';
+import BeforeAfterShowcase from '../../../src/components/service/BeforeAfterShowcase';
 
 interface ServicePageProps {
   params: {
@@ -119,7 +121,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
         {/* 2. Hero Section */}
         <HeroSection service={service} />
 
-        {/* 3. What's Included Section */}
+        {/* 3. Service Gallery Section */}
+        <ServiceGallery service={service} />
+
+        {/* 4. What's Included Section */}
         <WhatsIncluded service={service} />
 
         {/* 4. Local Benefits Section */}
