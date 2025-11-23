@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getServiceBySlug, getAllServiceSlugs } from '../../../src/lib/data';
+import { getServiceBySlug, getAllServiceSlugs } from '../../lib/data';
 import StickyHeader from '../../../src/components/service/StickyHeader';
 import HeroSection from '../../../src/components/service/HeroSection';
 import WhatsIncluded from '../../../src/components/service/WhatsIncluded';
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const service = getServiceBySlug(params.slug);
-  
+
   if (!service) {
     return {
       title: 'Service Not Found - One Detail At A Time LLC',
@@ -64,15 +64,18 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   };
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = params;
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();
   }
 
   return (
+    <>    
     <div className="min-h-screen">
+
       {/* 1. Sticky Header */}
       <StickyHeader serviceName={service.name} />
 
@@ -94,5 +97,6 @@ export default function ServicePage({ params }: ServicePageProps) {
       {/* 7. Final CTA Section */}
       <FinalCTA service={service} />
     </div>
+    </>
   );
 }

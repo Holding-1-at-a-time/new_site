@@ -126,13 +126,14 @@ export default function Testimonials3D() {
       }
     );
 
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
+    const currentRef = carouselRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (carouselRef.current) {
-        observer.unobserve(carouselRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -151,7 +152,6 @@ export default function Testimonials3D() {
   }, [isAutoPlaying, isVisible]);
 
   // Navigation functions
-
   const goToSlide = useCallback((index: number) => {
     // Clear any existing timeout
     if (autoPlayTimeoutRef.current) {
@@ -166,6 +166,29 @@ export default function Testimonials3D() {
       setIsAutoPlaying(true);
       autoPlayTimeoutRef.current = null;
     }, 10000);
+  }, []);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoPlayTimeoutRef.current) {
+        clearTimeout(autoPlayTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const nextSlide = useCallback(() => {
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoPlayTimeoutRef.current) {
+        clearTimeout(autoPlayTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const nextSlide = useCallback(() => {
   }, []);
 
   const nextSlide = useCallback(() => {

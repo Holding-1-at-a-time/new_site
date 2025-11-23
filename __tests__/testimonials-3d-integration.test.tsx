@@ -109,9 +109,24 @@ export default function TestimonialsTestPage() {
   };
 
   const runAnimationPerformanceTest = () => {
-    // Check if CSS animations are present
-    const hasRotationKeyframes = document.styleSheets.length > 0;
-    const hasCardKeyframes = document.styleSheets.length > 0;
+    // Check for actual animation keyframes in loaded stylesheets
+    let hasRotationKeyframes = false;
+    let hasCardKeyframes = false;
+    try {
+      for (const sheet of Array.from(document.styleSheets)) {
+        const cssText = Array.from(sheet.cssRules || [])
+          .map(rule => rule.cssText)
+          .join('');
+        if (cssText.includes('rotateCarousel') || cssText.includes('rotate')) {
+          hasRotationKeyframes = true;
+        }
+        if (cssText.includes('cardFloat') || cssText.includes('float')) {
+          hasCardKeyframes = true;
+        }
+      }
+    } catch (e) {
+      // Cross-origin stylesheets may throw errors
+    }
     
     const testResult: TestResult = {
       name: 'Animation Performance',
@@ -131,20 +146,26 @@ export default function TestimonialsTestPage() {
       const testResult: TestResult = {
         name: 'Auto-rotation Testing',
         status: 'pass',
-        message: 'Auto-rotation works correctly - 5-second intervals verified'
-      };
-      
-      setTestResults(prev => ({
-        ...prev,
-        [testResult.name]: testResult
-      }));
-      setAutoRotationTest(false);
-      setTestStartTime(null);
-    }, 6000); // 6 seconds to allow for one full rotation
+  useEffect(() => {
+    const testFunctions = [
+      runComponentIntegrationTest,
+      runTypeScriptValidationTest,
+      runAutoRotationTest,
+      runNavigationTest,
+      runResponsiveDesignTest,
+      runTouchSwipeTest,
+      runAccessibilityTest,
+      runAnimationPerformanceTest,
+    ];
+    
+    const results: TestResults = {};
+    testFunctions.forEach(testFn => {
+      const result = testFn();
+      results[result.name] = result;
+    });
 
-    return () => clearTimeout(timer);
-  }, [autoRotationTest, testStartTime]);
-
+    setTestResults(results);
+  }, []);
   // Run all tests on component mount
   useEffect(() => {
     const results: TestResults = {

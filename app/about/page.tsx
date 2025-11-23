@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { businessInfo } from '../../src/lib/data';
+import { businessInfo } from '../lib/data';
 
 export const metadata: Metadata = {
   title: 'About Us - Professional Car Detailing San Antonio TX | One Detail At A Time LLC',

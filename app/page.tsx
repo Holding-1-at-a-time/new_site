@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { services, businessInfo } from '../src/lib/data';
+import { services, businessInfo } from './lib/data';
 
 export default function Home() {
   return (

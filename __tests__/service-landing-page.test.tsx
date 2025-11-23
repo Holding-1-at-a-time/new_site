@@ -6,7 +6,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ServicePage from '../app/services/[slug]/page';
-import { getServiceBySlug } from '../src/lib/data';
+import { getServiceBySlug } from '../app/lib/data';
 import type { Service } from '../src/types';
 
 // Mock the data layer
