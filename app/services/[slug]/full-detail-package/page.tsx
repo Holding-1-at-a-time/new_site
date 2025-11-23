@@ -1,6 +1,6 @@
+import { businessInfo } from '@/src/lib/data';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { businessInfo } from '@/src/lib/data';
 
 const SERVICE_AREAS = [
   "San Antonio",
@@ -16,19 +16,19 @@ const SERVICE_AREAS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Headlight Restoration San Antonio | One Detail At A Time',
-  description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation. Serving Alamo Heights, Stone Oak, and surrounding areas.',
+  title: 'Full Detail Package San Antonio | One Detail At A Time',
+  description: 'Complete interior and exterior transformation. Includes hand wash, sealant, interior deep clean, and 1-step paint correction. Serving Alamo Heights, Stone Oak, and surrounding areas.',
   keywords: [
-    "headlight restoration San Antonio",
-    "foggy headlight repair Alamo Heights",
-    "headlight cleaning San Antonio TX",
-    "yellow headlight fix near me",
-    "headlight clear coat Texas",
-    "headlight polishing San Antonio"
-  ],
+    "full car detailing San Antonio",
+    "complete auto detail Alamo Heights",
+    "interior exterior detail San Antonio TX",
+    "full service car wash near me",
+    "complete car cleaning San Antonio",
+    "auto detailing package Texas"
+],
   openGraph: {
-    title: 'Headlight Restoration | San Antonio Auto Detailing',
-    description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.',
+    title: 'Full Detail Package | San Antonio Auto Detailing',
+    description: 'Complete interior and exterior transformation. Includes hand wash, sealant, interior deep clean, and 1-step paint correction.',
     type: 'website',
     locale: 'en_US',
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Headlight Restoration',
+  serviceType: 'Full Detail Package',
   provider: {
     '@type': 'AutoRepair',
     name: 'One Detail At A Time LLC',
@@ -69,14 +69,14 @@ const jsonLd = {
       reviewCount: '28',
     },
   },
-  description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.',
+  description: 'Complete interior and exterior transformation. Includes hand wash, sealant, interior deep clean, and 1-step paint correction.',
   areaServed: SERVICE_AREAS.map(area => ({
     '@type': 'City',
     name: `${area}, TX`,
   })),
   offers: {
     '@type': 'Offer',
-    price: '100',
+    price: '450',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
   },
@@ -111,20 +111,20 @@ export default function ServicePage() {
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h1 className="text-6xl md:text-7xl font-bold mb-8 text-balance">
-              Headlight Restoration
+              Full Detail Package
               <span className="block text-4xl md:text-5xl text-primary mt-4">San Antonio, TX</span>
             </h1>
             <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.
+              Complete interior and exterior transformation. Includes hand wash, sealant, interior deep clean, and 1-step paint correction.
             </p>
             <div className="flex flex-wrap gap-6 items-center justify-center mb-12">
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Starting At</div>
-                <div className="text-primary font-bold text-3xl">$100</div>
+                <div className="text-primary font-bold text-3xl">$450</div>
               </div>
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Duration</div>
-                <div className="text-white font-semibold text-2xl">1-2 hours</div>
+                <div className="text-white font-semibold text-2xl">6-8 hours</div>
               </div>
             </div>
             <a
@@ -162,7 +162,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">What's Included</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Wet sanding to remove oxidation","Multi-stage polishing","UV-protective clear coat","Improved light output","Enhanced appearance"].map((feature, index) => (
+              {["Complete exterior hand wash & sealant","Full interior deep cleansing","1-Step paint correction","Wheel and tire detailing","Engine bay cleaning","All glass and windows","Door jambs and trunk"].map((feature, index) => (
                 <div key={index} className="flex items-start gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors">
                   <svg className="w-7 h-7 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -178,7 +178,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Why San Antonio Chooses Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {["Dramatically improves nighttime visibility and safety","Avoid costly headlight replacement ($300-$1000)","UV protection prevents yellowing in Texas sun","Same-day service available in San Antonio"].map((benefit, index) => (
+              {["Best value - combines multiple services at discounted rate","Complete transformation inside and out","Show-car quality results from IDA-certified professional","Perfect for San Antonio residents wanting comprehensive care"].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-gray-800/30 rounded-xl border border-gray-700">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{"step":1,"title":"Inspection & Masking","description":"Assess damage and protect paint"},{"step":2,"title":"Wet Sanding","description":"Remove oxidized layer progressively"},{"step":3,"title":"Polish & Refine","description":"Restore clarity with compounds"},{"step":4,"title":"UV Protection","description":"Apply protective clear coat"}].map((step) => (
+              {[{"step":1,"title":"Complete Assessment","description":"Evaluate entire vehicle condition"},{"step":2,"title":"Exterior Correction","description":"Wash, decontaminate, correct, seal"},{"step":3,"title":"Interior Restoration","description":"Deep clean all interior surfaces"},{"step":4,"title":"Final Details","description":"Address remaining areas and inspect"}].map((step) => (
                 <div key={step.step} className="text-center">
                   <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-3xl shadow-lg shadow-primary/20">
                     {step.step}
@@ -213,7 +213,7 @@ export default function ServicePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Common Questions</h2>
             <div className="space-y-6">
-              {[{"question":"How much is headlight restoration in San Antonio?","answer":"Professional headlight restoration is $100 for both headlights. Much cheaper than replacement. Serving all San Antonio areas."},{"question":"How long does headlight restoration last?","answer":"With our UV-protective coating, results last 2-3 years even in Texas sun. Much longer than DIY kits."},{"question":"Can you restore severely yellowed headlights?","answer":"Yes! We can restore most oxidized headlights. Free assessment at our San Antonio location."}].map((faq, index) => (
+              {[{"question":"What is included in full detail package?","answer":"Complete interior deep clean, exterior hand wash with sealant, 1-step paint correction, wheels, tires, glass, and engine bay. Everything your car needs."},{"question":"How long does full detailing take in San Antonio?","answer":"Full detail package takes 6-8 hours. Appointment required at our San Antonio location for best results."},{"question":"Is full detail worth it vs. regular car wash?","answer":"Absolutely! Full detail restores and protects your vehicle, extending its life and value. Much more than a basic wash."}].map((faq, index) => (
                 <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{faq.question}</h3>
                   <p className="text-gray-300 text-lg leading-relaxed">{faq.answer}</p>
@@ -225,9 +225,9 @@ export default function ServicePage() {
 
         <section className="py-32 bg-gradient-to-br from-primary/10 to-primary/5 border-y border-primary/20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-5xl font-bold mb-6">Ready for Headlight Restoration?</h2>
+            <h2 className="text-5xl font-bold mb-6">Ready for Full Detail Package?</h2>
             <p className="text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Schedule your headlight restoration service in San Antonio today
+              Schedule your full detail package service in San Antonio today
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
               <a

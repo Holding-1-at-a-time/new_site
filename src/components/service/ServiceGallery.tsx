@@ -1,3 +1,6 @@
+"use client";
+
+
 import React, { useState } from 'react';
 import type { Service } from '../../types';
 import OptimizedImage from '../ui/OptimizedImage';
@@ -8,6 +11,16 @@ interface ServiceGalleryProps {
   className?: string;
 }
 
+/**
+ * A component that displays a gallery of images for a given service.
+ *
+ * It also includes a caption and alt text for each image, as well as a navigation
+ * system to allow users to switch between images.
+ *
+ * @param {Service} service The service object containing the images and captions.
+ * @param {string} [className] Optional CSS class names for styling the component.
+ * @returns {JSX.Element} The rendered component.
+ */
 export default function ServiceGallery({ service, className }: ServiceGalleryProps) {
   const [selectedImage, setSelectedImage] = useState(0);
 

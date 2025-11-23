@@ -1,4 +1,4 @@
-import { Testimonials3D } from "src/components/Testimonials3D";
+import Testimonials3D from "@/src/components/Testimonials3D";
 
 export default function TestimonialsPage() {
   return (

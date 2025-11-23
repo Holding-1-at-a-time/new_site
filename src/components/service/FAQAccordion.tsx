@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { Service } from '../../types';
+import { businessInfo } from '../../lib/data';
 
 interface FAQAccordionProps {
   service: Service;
@@ -86,13 +87,13 @@ export default function FAQAccordion({ service }: FAQAccordionProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:(726) 207-1007"
+                href={`tel:${businessInfo.phone.replace(/[^\d]/g, '')}`}
                 className="inline-block bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
               >
-                Call (726) 207-1007
+                Call {businessInfo.phone}
               </a>
               <a
-                href="mailto:rromerojr1@gmail.com"
+                href={`mailto:${businessInfo.email}`}
                 className="inline-block border-2 border-teal-500 text-teal-600 hover:bg-teal-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all"
               >
                 Send Email

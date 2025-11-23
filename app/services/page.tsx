@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { businessInfo, services } from '../lib/data';
+import { businessInfo, services } from '@/src/lib/data';
 
 export const metadata: Metadata = {
   title: 'Car Detailing Services - One Detail At A Time LLC',
@@ -15,6 +15,15 @@ export const metadata: Metadata = {
   ],
 };
 
+/**
+ * ServicesPage is a Next.js page component that displays the services offered by One Detail At A Time
+ * LLC. It includes a hero section with a brief overview of the services, a
+ * services grid with details on each service, a service process section that
+ * explains the 4-step process used to complete each service, a why
+ * choose professional detailing section that highlights the benefits of choosing a
+ * professional detailing service, and a call to action section that allows users to
+ * get a free quote.
+ */
 export default function ServicesPage() {
   return (
     

@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState } from 'react';
 import type { Service } from '../../types';
+import { businessInfo } from '../../lib/data';
 import OptimizedImage from '../ui/OptimizedImage';
 import { cn } from '../../lib/utils';
 
@@ -7,6 +10,13 @@ interface BeforeAfterShowcaseProps {
   service: Service;
   className?: string;
 }
+
+/**
+ * BeforeAfterShowcase is a component that displays a before-and-after comparison of a vehicle detailing transformation.
+ * It contains a toggle button to switch between the before and after images, along with a brief description of the transformation.
+ * The component also displays a list of benefits that the transformation provides, such as long-lasting protection against the elements, enhanced appearance, and increased resale value.
+ * Finally, it includes a call-to-action to encourage the user to contact the detailing service.
+ */
 
 export default function BeforeAfterShowcase({ service, className }: BeforeAfterShowcaseProps) {
   const [isBeforeSelected, setIsBeforeSelected] = useState(true);
@@ -179,10 +189,10 @@ export default function BeforeAfterShowcase({ service, className }: BeforeAfterS
               for their professional automotive detailing needs.
             </p>
             <a
-              href="tel:(726) 207-1007"
+              href={`tel:${businessInfo.phone.replace(/[^\d]/g, '')}`}
               className="inline-block bg-white text-teal-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors duration-300"
             >
-              Call (726) 207-1007 Today
+              Call {businessInfo.phone} Today
             </a>
           </div>
         </div>

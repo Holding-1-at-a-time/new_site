@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getServiceBySlug, getAllServiceSlugs, businessInfo } from '../../lib/data';
+import { getServiceBySlug, getAllServiceSlugs, businessInfo } from '@/src/lib/data';
 import StickyHeader from '../../../src/components/service/StickyHeader';
 import HeroSection from '../../../src/components/service/HeroSection';
 import WhatsIncluded from '../../../src/components/service/WhatsIncluded';
@@ -37,10 +37,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.name} San Antonio | One Detail At A Time LLC`,
-    description: service.metaDescription,
-    keywords: service.keywords,
     alternates: {
-      canonical: `/services/${service.slug}`,
+      canonical: `https://www.onedetailatatime.com/services/${service.slug}`, // This line is intentionally kept as the primary canonical URL
+
     },
     openGraph: {
       title: `${service.name} | One Detail At A Time LLC`,
@@ -49,14 +48,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       url: `https://www.odaat1.com/services/${service.slug}`,
     },
   };
-}
+  };
 
-export default async function ServicePage({ params }: ServicePageProps) {
+export default function ServicePage({ params }: ServicePageProps) {
   const { slug } = params;
   const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();
+    return null;
   }
 
   const jsonLd = {
@@ -66,11 +66,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
     provider: {
       '@type': 'LocalBusiness',
       name: businessInfo.name,
-      image: 'https://www.odaat1.com/logo.png', // Replace with actual logo URL
+      image: 'https://www.odaat1.com/logo.png',
       '@id': 'https://www.odaat1.com',
       url: 'https://www.odaat1.com',
       telephone: businessInfo.phone,
-      priceRange: '$', // Or generate dynamically
+      priceRange: '$',
       address: {
         '@type': 'PostalAddress',
         streetAddress: businessInfo.address,
@@ -81,7 +81,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 29.5758, // Replace with actual coordinates
+        latitude: 29.5758,
         longitude: -98.3640,
       },
       areaServed: service.serviceAreas.map(area => ({
@@ -114,7 +114,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen">
-
         {/* 1. Sticky Header */}
         <StickyHeader serviceName={service.name} />
 
@@ -124,11 +123,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
         {/* 3. Service Gallery Section */}
         <ServiceGallery service={service} />
 
-        {/* 4. What's Included Section */}
-        <WhatsIncluded service={service} />
-
-        {/* 5. Before/After Showcase */}
+        {/* 4. Before/After Showcase */}
         <BeforeAfterShowcase service={service} />
+
+        {/* 5. What's Included Section */}
+        <WhatsIncluded service={service} />
 
         {/* 6. Local Benefits Section */}
         <LocalBenefits service={service} />
@@ -146,21 +145,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <FAQAccordion service={service} />
 
         {/* 11. Final CTA Section */}
-        <FinalCTA service={service} />
-
-        {/* 5. Service Areas Section */}
-        <ServiceAreas service={service} />
-
-        {/* 6. Why Choose This Service Section */}
-        <WhyChoose service={service} />
-
-        {/* 7. Process Section */}
-        <Process service={service} />
-
-        {/* 8. FAQ Accordion Section */}
-        <FAQAccordion service={service} />
-
-        {/* 9. Final CTA Section */}
         <FinalCTA service={service} />
       </div>
     </>

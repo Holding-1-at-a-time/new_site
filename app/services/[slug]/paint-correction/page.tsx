@@ -16,19 +16,19 @@ const SERVICE_AREAS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Headlight Restoration San Antonio | One Detail At A Time',
-  description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation. Serving Alamo Heights, Stone Oak, and surrounding areas.',
+  title: 'Paint Correction San Antonio | One Detail At A Time',
+  description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish. Serving Alamo Heights, Stone Oak, and surrounding areas.',
   keywords: [
-    "headlight restoration San Antonio",
-    "foggy headlight repair Alamo Heights",
-    "headlight cleaning San Antonio TX",
-    "yellow headlight fix near me",
-    "headlight clear coat Texas",
-    "headlight polishing San Antonio"
-  ],
+    "paint correction San Antonio",
+    "swirl mark removal Alamo Heights",
+    "scratch removal San Antonio TX",
+    "car polishing near me",
+    "paint restoration San Antonio",
+    "clear coat correction Texas"
+],
   openGraph: {
-    title: 'Headlight Restoration | San Antonio Auto Detailing',
-    description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.',
+    title: 'Paint Correction | San Antonio Auto Detailing',
+    description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.',
     type: 'website',
     locale: 'en_US',
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Headlight Restoration',
+  serviceType: 'Paint Correction',
   provider: {
     '@type': 'AutoRepair',
     name: 'One Detail At A Time LLC',
@@ -69,14 +69,14 @@ const jsonLd = {
       reviewCount: '28',
     },
   },
-  description: 'Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.',
+  description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.',
   areaServed: SERVICE_AREAS.map(area => ({
     '@type': 'City',
     name: `${area}, TX`,
   })),
   offers: {
     '@type': 'Offer',
-    price: '100',
+    price: '400',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
   },
@@ -111,20 +111,20 @@ export default function ServicePage() {
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h1 className="text-6xl md:text-7xl font-bold mb-8 text-balance">
-              Headlight Restoration
+              Paint Correction
               <span className="block text-4xl md:text-5xl text-primary mt-4">San Antonio, TX</span>
             </h1>
             <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Professional headlight restoration removes yellowing and oxidation. UV-protective coating prevents future degradation.
+              Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.
             </p>
             <div className="flex flex-wrap gap-6 items-center justify-center mb-12">
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Starting At</div>
-                <div className="text-primary font-bold text-3xl">$100</div>
+                <div className="text-primary font-bold text-3xl">$400</div>
               </div>
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Duration</div>
-                <div className="text-white font-semibold text-2xl">1-2 hours</div>
+                <div className="text-white font-semibold text-2xl">6-8 hours</div>
               </div>
             </div>
             <a
@@ -162,7 +162,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">What's Included</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Wet sanding to remove oxidation","Multi-stage polishing","UV-protective clear coat","Improved light output","Enhanced appearance"].map((feature, index) => (
+              {["Multi-stage paint correction","Removes swirl marks and light scratches","Eliminates water spots and oxidation","Restores paint clarity and depth","Machine polishing with professional tools","Paint thickness measurement"].map((feature, index) => (
                 <div key={index} className="flex items-start gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors">
                   <svg className="w-7 h-7 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -178,7 +178,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Why San Antonio Chooses Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {["Dramatically improves nighttime visibility and safety","Avoid costly headlight replacement ($300-$1000)","UV protection prevents yellowing in Texas sun","Same-day service available in San Antonio"].map((benefit, index) => (
+              {["IDA-certified paint correction specialist in San Antonio","Mirror-like finish removes years of damage","Perfect preparation for ceramic coating","Increases vehicle value and appearance dramatically"].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-gray-800/30 rounded-xl border border-gray-700">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{"step":1,"title":"Inspection & Masking","description":"Assess damage and protect paint"},{"step":2,"title":"Wet Sanding","description":"Remove oxidized layer progressively"},{"step":3,"title":"Polish & Refine","description":"Restore clarity with compounds"},{"step":4,"title":"UV Protection","description":"Apply protective clear coat"}].map((step) => (
+              {[{"step":1,"title":"Paint Inspection","description":"Assess damage and measure thickness"},{"step":2,"title":"Decontamination","description":"Remove all surface contaminants"},{"step":3,"title":"Compound & Polish","description":"Multi-stage correction process"},{"step":4,"title":"Final Inspection","description":"Verify results under LED lighting"}].map((step) => (
                 <div key={step.step} className="text-center">
                   <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-3xl shadow-lg shadow-primary/20">
                     {step.step}
@@ -213,7 +213,7 @@ export default function ServicePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Common Questions</h2>
             <div className="space-y-6">
-              {[{"question":"How much is headlight restoration in San Antonio?","answer":"Professional headlight restoration is $100 for both headlights. Much cheaper than replacement. Serving all San Antonio areas."},{"question":"How long does headlight restoration last?","answer":"With our UV-protective coating, results last 2-3 years even in Texas sun. Much longer than DIY kits."},{"question":"Can you restore severely yellowed headlights?","answer":"Yes! We can restore most oxidized headlights. Free assessment at our San Antonio location."}].map((faq, index) => (
+              {[{"question":"How much does paint correction cost in San Antonio?","answer":"Our professional paint correction starts at $400. Price varies based on vehicle size and paint condition. Serving all of San Antonio."},{"question":"Will paint correction remove all scratches?","answer":"We can remove or significantly reduce most light to moderate scratches. Deep scratches penetrating clear coat may require touch-up."},{"question":"Do you offer mobile paint correction?","answer":"We operate from our San Antonio location at 11692 Bricken Circle for best results with professional lighting and equipment."}].map((faq, index) => (
                 <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{faq.question}</h3>
                   <p className="text-gray-300 text-lg leading-relaxed">{faq.answer}</p>
@@ -225,9 +225,9 @@ export default function ServicePage() {
 
         <section className="py-32 bg-gradient-to-br from-primary/10 to-primary/5 border-y border-primary/20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-5xl font-bold mb-6">Ready for Headlight Restoration?</h2>
+            <h2 className="text-5xl font-bold mb-6">Ready for Paint Correction?</h2>
             <p className="text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Schedule your headlight restoration service in San Antonio today
+              Schedule your paint correction service in San Antonio today
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
               <a

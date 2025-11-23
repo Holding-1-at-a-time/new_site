@@ -100,12 +100,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Exterior Hand Wash & Sealant"),
     metaDescription: "Professional exterior hand wash and sealant service in San Antonio, TX. Premium protection for your vehicle's paint with lasting results. Call (726) 207-1007 today!",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
       "Perfect for San Antonio's climate with UV protection",
-      "Removes Central Texas dust and pollen buildup", 
-      "Protects against hill country road grime",
-      "Ideal for vehicles driven on I-35 and Loop 410"
+      "Removes Central Texas dust and pollen buildup from vehicles",
+      "Protects against hill country road grime and debris",
+      "Ideal for vehicles driven on I-35, Loop 410, and 1604",
+      "Specialized protection for luxury vehicles in Alamo Heights and Stone Oak",
+      "Dust protection essential for Dominion and Shavano Park properties",
+      "Wind protection for vehicles near San Antonio International Airport"
     ]
   },
   {
@@ -180,12 +187,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Interior Deep Cleansing"),
     metaDescription: "Expert interior deep cleansing services in San Antonio, TX. Remove stains, odors, and bacteria from your vehicle's interior. Professional car detailing in San Antonio area.",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
-      "Eliminates San Antonio's high humidity-related odors",
-      "Removes Central Texas pollen and dust from interiors",
-      "Perfect for families with allergies and sensitivities",
-      "Extends life of leather seats in hot Texas climate"
+      "Eliminates San Antonio's high humidity-related odors and allergens",
+      "Removes Central Texas pollen and dust from luxury vehicle interiors",
+      "Perfect for families with allergies in Stone Oak and Dominion",
+      "Extends life of leather seats in hot Texas climate",
+      "Specialized care for high-end vehicles in Alamo Heights and Olmos Park",
+      "Dust removal essential for golf course communities like Dominion",
+      "Pollen protection for vehicles parked under oak trees in Shavano Park"
     ]
   },
   {
@@ -260,12 +274,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Paint Correction"),
     metaDescription: "Professional paint correction services in San Antonio, TX. Remove swirl marks, scratches, and oxidation to restore your vehicle's paint to like-new condition.",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
-      "Removes Central Texas sun damage and oxidation",
-      "Perfect for vehicles exposed to San Antonio's intense UV rays",
-      "Restores paint on cars driven extensively on Texas highways",
-      "Increases resale value for San Antonio area vehicles"
+      "Removes Central Texas sun damage and oxidation from intense UV exposure",
+      "Perfect for luxury vehicles parked in Stone Oak and Dominion driveways",
+      "Restores paint on vehicles driven extensively on I-35, Loop 1604, and 410",
+      "Increases resale value for high-end vehicles in Alamo Heights market",
+      "Essential protection for cars in Shavano Park's sunny suburban streets",
+      "Paint correction expertise for vintage and exotic vehicles in Olmos Park",
+      "UV damage restoration for vehicles near San Antonio International Airport"
     ]
   },
   {
@@ -339,12 +360,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Ceramic Coating"),
     metaDescription: "Professional ceramic coating services in San Antonio, TX. Ultimate paint protection with 5+ year warranty. Hydrophobic coating for easier maintenance in Texas climate.",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
-      "Perfect protection against San Antonio's intense UV rays",
-      "Resistant to Central Texas acid rain and environmental damage",
-      "Ideal for high-end vehicles in Alamo Heights area",
-      "Reduces maintenance in dusty Texas hill country conditions"
+      "Ultimate protection against San Antonio's intense UV rays and heat",
+      "Resistant to Central Texas acid rain and environmental contaminants",
+      "Perfect for luxury vehicles in Stone Oak and Dominion communities",
+      "Reduces maintenance in dusty Hill Country driving conditions",
+      "Essential protection for high-end vehicles in Alamo Heights estates",
+      "Dust resistance for golf course communities like Dominion and Shavano Park",
+      "UV protection critical for vehicles parked in sunny suburban areas"
     ]
   },
   {
@@ -418,12 +446,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Headlight Restoration"),
     metaDescription: "Professional headlight restoration in San Antonio, TX. Improve nighttime visibility and safety with crystal clear headlights. Affordable alternative to replacement.",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
-      "Essential for safe driving on San Antonio highways at night",
-      "Removes damage from Texas sun and heat exposure",
-      "Improves visibility on I-35 and Loop 410 at night",
-      "Cost-effective solution for older vehicles common in San Antonio"
+      "Essential for safe nighttime driving on San Antonio highways and Loop 410",
+      "Critical restoration for vehicles exposed to intense Texas sun and heat",
+      "Improves visibility on I-35, Loop 1604, and major San Antonio corridors",
+      "Cost-effective solution for older vehicles throughout San Antonio metro",
+      "Safety enhancement for commuting vehicles in Stone Oak and Dominion",
+      "Visibility improvement for rural roads near Shavano Park and Leon Valley",
+      "Professional restoration for classic cars in Alamo Heights and Olmos Park"
     ]
   },
   {
@@ -498,12 +533,19 @@ export const services: Service[] = [
     ],
     keywords: generateLocalSEOKeywords("Full Detail Package"),
     metaDescription: "Complete car detailing package in San Antonio, TX. Full interior and exterior detailing service with paint correction and protection. Best value professional detailing.",
-    serviceAreas: ["San Antonio", "Leon Valley", "Alamo Heights", "Terrell Hills", "Windcrest"],
+    serviceAreas: [
+      "San Antonio", "Alamo Heights", "Terrell Hills", "Olmos Park", "Leon Valley",
+      "Castle Hills", "Balcones Heights", "Stone Oak", "Dominion", "Shavano Park",
+      "Hollywood Park", "Windcrest"
+    ],
     localBenefits: [
-      "Perfect preparation for San Antonio's hot and dusty conditions",
-      "Comprehensive protection against Texas sun and road debris",
-      "Ideal for luxury vehicles in prestigious San Antonio neighborhoods",
-      "Best value for complete vehicle transformation"
+      "Complete preparation for San Antonio's hot climate and dusty conditions",
+      "Comprehensive protection against Texas sun, road debris, and pollen",
+      "Perfect for luxury vehicles in prestigious Stone Oak and Alamo Heights",
+      "Best value package for complete vehicle transformation in San Antonio",
+      "Essential for vehicles in golf course communities like Dominion",
+      "Complete care for vehicles exposed to Hill Country dust and debris",
+      "Premium detailing for high-end vehicles in Olmos Park estates"
     ]
   }
 ];

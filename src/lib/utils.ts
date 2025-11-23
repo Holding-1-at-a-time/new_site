@@ -34,22 +34,52 @@ export function generateLocalSEOKeywords(serviceName: string, city: string = 'Sa
     `${city}`,
     `${state}`,
     'San Antonio car detailing',
-    'San Antonio auto detailing'
+    'San Antonio auto detailing',
+    'Alamo Heights car detailing',
+    'Stone Oak auto detailing',
+    'Dominion car detailing',
+    'Terrell Hills detailing',
+    'Olmos Park car service',
+    'Shavano Park detailing',
+    'Castle Hills car wash'
+  ];
+
+  const premiumNeighborhoods = [
+    'Alamo Heights',
+    'Stone Oak',
+    'Dominion',
+    'Terrell Hills',
+    'Olmos Park',
+    'Shavano Park',
+    'Castle Hills',
+    'Leon Valley',
+    'Windcrest',
+    'Hollywood Park',
+    'Balcones Heights'
   ];
 
   const serviceKeywords: { [key: string]: string[] } = {
-    'exterior hand wash': ['hand wash', 'exterior wash', 'paint sealant', 'car exterior'],
-    'interior deep cleansing': ['interior detailing', 'car interior', 'deep clean', 'interior cleaning'],
-    'paint correction': ['paint correction', 'swirl removal', 'scratch removal', 'paint restoration'],
-    'ceramic coating': ['ceramic coating', 'paint protection', 'nano coating', 'long-term protection'],
-    'headlight restoration': ['headlight restoration', 'headlight cleaning', 'lens restoration', 'headlight clarity'],
-    'full detail': ['full detail', 'complete detailing', 'full service detail', 'comprehensive detailing']
+    'exterior hand wash': ['hand wash', 'exterior wash', 'paint sealant', 'car exterior', 'premium exterior care'],
+    'interior deep cleansing': ['interior detailing', 'car interior', 'deep clean', 'interior cleaning', 'luxury interior care'],
+    'paint correction': ['paint correction', 'swirl removal', 'scratch removal', 'paint restoration', 'automotive restoration'],
+    'ceramic coating': ['ceramic coating', 'paint protection', 'nano coating', 'long-term protection', 'premium coating'],
+    'headlight restoration': ['headlight restoration', 'headlight cleaning', 'lens restoration', 'headlight clarity', 'automotive safety'],
+    'full detail': ['full detail', 'complete detailing', 'full service detail', 'comprehensive detailing', 'complete vehicle care']
   };
 
   const serviceKey = serviceName.toLowerCase();
   const specificKeywords = Object.keys(serviceKeywords).find(key => serviceKey.includes(key));
   
-  return specificKeywords 
+  // Add neighborhood-specific long-tail keywords
+  const neighborhoodKeywords = premiumNeighborhoods.flatMap(neighborhood => [
+    `${serviceName.toLowerCase()} ${neighborhood}`,
+    `${serviceName.toLowerCase()} in ${neighborhood}`,
+    `${serviceName.toLowerCase()} near ${neighborhood}`
+  ]);
+  
+  const combinedKeywords = specificKeywords
     ? [...baseKeywords, ...serviceKeywords[specificKeywords]]
     : baseKeywords;
+    
+  return [...combinedKeywords, ...neighborhoodKeywords];
 }
