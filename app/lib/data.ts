@@ -12,7 +12,7 @@ export const businessInfo: BusinessInfo = {
   serviceArea: "San Antonio, TX",
   hours: {
     monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM", 
+    tuesday: "8:00 AM - 6:00 PM",
     wednesday: "8:00 AM - 6:00 PM",
     thursday: "8:00 AM - 6:00 PM",
     friday: "8:00 AM - 6:00 PM",
@@ -24,6 +24,26 @@ export const businessInfo: BusinessInfo = {
     // Add other social media links as needed
   }
 };
+
+const SERVICE_AREAS = [
+  'San Antonio',
+  'Alamo Heights',
+  'Terrell Hills',
+  'Olmos Park',
+  'Balcones Heights',
+  'Castle Hills',
+  'Stone Oak',
+  'Dominion',
+  'Shavano Park',
+  'Leon Valley',
+];
+
+const LOCAL_BENEFITS = [
+    'Protects your vehicle from the harsh Texas sun and UV rays.',
+    'Maintains paint integrity against environmental contaminants.',
+    'Increases resale value in the competitive San Antonio market.',
+    'Keeps your car looking its best for drives around the city and beyond.',
+];
 
 // Services Data
 export const services: Service[] = [
@@ -61,7 +81,7 @@ export const services: Service[] = [
       },
       {
         id: 2,
-        title: "Hand Wash Process", 
+        title: "Hand Wash Process",
         description: "Two-bucket method hand wash with premium soaps",
         duration: "45 minutes"
       },
@@ -96,12 +116,16 @@ export const services: Service[] = [
       "/images/exterior-wash-1.jpg",
       "/images/exterior-wash-2.jpg",
       "/images/exterior-wash-3.jpg"
-    ]
+    ],
+    metaDescription: "Get a professional exterior hand wash and sealant in San Antonio, TX. Our service protects your car from Texas weather and keeps it shining. Book your appointment today!",
+    keywords: ['exterior hand wash San Antonio', 'car sealant Alamo Heights', 'auto wash Terrell Hills', 'vehicle protection near me', 'professional car wash San Antonio TX'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   },
   {
     id: "interior-deep-cleansing",
     name: "Interior Deep Cleansing",
-    slug: "interior-deep-cleansing", 
+    slug: "interior-deep-cleansing",
     shortDescription: "Complete interior detailing and deep cleaning",
     fullDescription: "Transform your car's interior with our comprehensive deep cleaning service. We remove stains, odors, and contaminants from every surface leaving your interior fresh and pristine.",
     price: "Starting at $175",
@@ -165,9 +189,13 @@ export const services: Service[] = [
     ],
     images: [
       "/images/interior-clean-1.jpg",
-      "/images/interior-clean-2.jpg", 
+      "/images/interior-clean-2.jpg",
       "/images/interior-clean-3.jpg"
-    ]
+    ],
+    metaDescription: "Complete interior deep cleansing for your car in San Antonio. We remove stains, odors, and allergens, leaving your vehicle fresh and clean. Contact us for a quote!",
+    keywords: ['interior car cleaning San Antonio', 'auto deep cleaning Alamo Heights', 'vehicle upholstery cleaning Terrell Hills', 'car odor removal Stone Oak', 'interior detailing near me'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   },
   {
     id: "paint-correction",
@@ -209,7 +237,7 @@ export const services: Service[] = [
       },
       {
         id: 3,
-        title: "Stage 2 Refinement", 
+        title: "Stage 2 Refinement",
         description: "Medium polish to refine and smooth surface",
         duration: "2-3 hours"
       },
@@ -238,7 +266,11 @@ export const services: Service[] = [
       "/images/paint-correction-1.jpg",
       "/images/paint-correction-2.jpg",
       "/images/paint-correction-3.jpg"
-    ]
+    ],
+    metaDescription: "Restore your vehicle's paint with our expert paint correction services in San Antonio, TX. We remove swirls, scratches, and oxidation for a flawless finish. Learn more!",
+    keywords: ['paint correction San Antonio', 'car scratch removal Alamo Heights', 'auto polishing Terrell Hills', 'swirl mark removal Dominion', 'car paint restoration near me'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   },
   {
     id: "ceramic-coating",
@@ -251,7 +283,7 @@ export const services: Service[] = [
     duration: "1-2 days",
     benefits: [
       "Long-lasting protection (5+ years)",
-      "Hydrophobic water repelling properties", 
+      "Hydrophobic water repelling properties",
       "Enhanced gloss and depth",
       "Easier maintenance and cleaning",
       "UV and chemical resistance"
@@ -308,11 +340,15 @@ export const services: Service[] = [
       "/images/ceramic-coating-1.jpg",
       "/images/ceramic-coating-2.jpg",
       "/images/ceramic-coating-3.jpg"
-    ]
+    ],
+    metaDescription: "Protect your car with long-lasting ceramic coating in San Antonio. Our service provides years of protection and a brilliant shine. Get a quote from One Detail At A Time LLC.",
+    keywords: ['ceramic coating San Antonio', 'car paint protection Alamo Heights', 'nano coating Terrell Hills', 'vehicle ceramic coat Shavano Park', 'auto paint sealant near me'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   },
   {
     id: "headlight-restoration",
-    name: "Headlight Restoration", 
+    name: "Headlight Restoration",
     slug: "headlight-restoration",
     shortDescription: "Restore clarity to cloudy or yellowed headlights",
     fullDescription: "Restore your headlight lenses to like-new condition with our professional restoration service. Improve safety and restore the appearance of your vehicle with crystal clear headlights.",
@@ -376,9 +412,13 @@ export const services: Service[] = [
     ],
     images: [
       "/images/headlight-restoration-1.jpg",
-      "/images/headlight-restoration-2.jpg", 
+      "/images/headlight-restoration-2.jpg",
       "/images/headlight-restoration-3.jpg"
-    ]
+    ],
+    metaDescription: "Improve visibility and safety with our headlight restoration service in San Antonio. We restore cloudy and yellowed headlights to like-new condition. Book your service today!",
+    keywords: ['headlight restoration San Antonio', 'clear headlights Alamo Heights', 'foggy headlight repair Terrell Hills', 'lens cleaning Olmos Park', 'headlight cleaning service near me'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   },
   {
     id: "full-detail-package",
@@ -398,7 +438,7 @@ export const services: Service[] = [
     ],
     includes: [
       "Exterior hand wash and sealant",
-      "Complete interior deep cleaning", 
+      "Complete interior deep cleaning",
       "Paint correction and enhancement",
       "Wheel and tire detailing",
       "Engine bay cleaning",
@@ -449,7 +489,11 @@ export const services: Service[] = [
       "/images/full-detail-1.jpg",
       "/images/full-detail-2.jpg",
       "/images/full-detail-3.jpg"
-    ]
+    ],
+    metaDescription: "Get a complete interior and exterior car detail in San Antonio, TX. Our full detail package makes your vehicle look and feel new again. Contact us for pricing!",
+    keywords: ['full car detail San Antonio', 'complete auto detailing Alamo Heights', 'interior and exterior car cleaning Terrell Hills', 'premium car detail Castle Hills', 'best car detailing near me'],
+    serviceAreas: SERVICE_AREAS,
+    localBenefits: LOCAL_BENEFITS,
   }
 ];
 

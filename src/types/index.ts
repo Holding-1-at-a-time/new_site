@@ -14,6 +14,10 @@ export interface Service {
   process: ProcessStep[];
   faqs: FAQ[];
   images: string[];
+  keywords: string[];
+  metaDescription: string;
+  serviceAreas: string[];
+  localBenefits: string[];
 }
 
 export interface ProcessStep {

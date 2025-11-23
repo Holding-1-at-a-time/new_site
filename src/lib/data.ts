@@ -28,6 +28,7 @@ export const businessInfo: BusinessInfo = {
 // Services Data
 export const services: Service[] = [
   {
+  
     id: "exterior-hand-wash-sealant",
     name: "Exterior Hand Wash & Sealant",
     slug: "exterior-hand-wash-sealant",

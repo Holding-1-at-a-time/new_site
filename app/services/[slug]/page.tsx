@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getServiceBySlug, getAllServiceSlugs } from '../../lib/data';
+import { getServiceBySlug, getAllServiceSlugs, businessInfo } from '../../lib/data';
 import StickyHeader from '../../../src/components/service/StickyHeader';
 import HeroSection from '../../../src/components/service/HeroSection';
 import WhatsIncluded from '../../../src/components/service/WhatsIncluded';
@@ -8,6 +8,8 @@ import WhyChoose from '../../../src/components/service/WhyChoose';
 import Process from '../../../src/components/service/Process';
 import FAQAccordion from '../../../src/components/service/FAQAccordion';
 import FinalCTA from '../../../src/components/service/FinalCTA';
+import ServiceAreas from '../../../src/components/service/ServiceAreas';
+import LocalBenefits from '../../../src/components/service/LocalBenefits';
 
 interface ServicePageProps {
   params: {
@@ -32,34 +34,17 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return {
-    title: `${service.name} - Professional Car Detailing San Antonio TX | One Detail At A Time LLC`,
-    description: service.fullDescription,
-    keywords: [
-      service.name.toLowerCase(),
-      'car detailing san antonio',
-      'auto detailing',
-      // Add complete benefit strings (normalized)
-      ...service.benefits.map(benefit => benefit.toLowerCase().trim()),
-      // Extract meaningful key phrases from longer benefits
-      ...service.benefits
-        .filter(benefit => benefit.split(' ').length > 6)
-        .flatMap(benefit => {
-          const words = benefit.toLowerCase().trim().split(' ');
-          // Extract first 4-5 word phrases for longer benefits
-          const phrases = [];
-          if (words.length >= 6) {
-            phrases.push(words.slice(0, 4).join(' '));
-            if (words.length >= 8) {
-              phrases.push(words.slice(0, 5).join(' '));
-            }
-          }
-          return phrases;
-        })
-    ],
+    title: `${service.name} San Antonio | One Detail At A Time LLC`,
+    description: service.metaDescription,
+    keywords: service.keywords,
+    alternates: {
+      canonical: `/services/${service.slug}`,
+    },
     openGraph: {
-      title: service.name,
+      title: `${service.name} | One Detail At A Time LLC`,
       description: service.shortDescription,
       type: 'website',
+      url: `https://www.onedetailatatime.com/services/${service.slug}`,
     },
   };
 }
@@ -72,31 +57,89 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: service.name,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: businessInfo.name,
+      image: 'https://www.onedetailatatime.com/logo.png', // Replace with actual logo URL
+      '@id': 'https://www.onedetailatatime.com',
+      url: 'https://www.onedetailatatime.com',
+      telephone: businessInfo.phone,
+      priceRange: '$', // Or generate dynamically
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: businessInfo.address,
+        addressLocality: businessInfo.city,
+        addressRegion: businessInfo.state,
+        postalCode: businessInfo.zipCode,
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 29.5758, // Replace with actual coordinates
+        longitude: -98.3640,
+      },
+      areaServed: service.serviceAreas.map(area => ({
+        '@type': 'City',
+        name: area,
+      })),
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '28',
+      },
+    },
+    description: service.fullDescription,
+    areaServed: service.serviceAreas.map(area => ({
+      '@type': 'City',
+      name: `${area}, TX`,
+    })),
+    offers: {
+      '@type': 'Offer',
+      price: service.startingPrice.toString(),
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
   return (
-    <>    
-    <div className="min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen">
 
-      {/* 1. Sticky Header */}
-      <StickyHeader serviceName={service.name} />
+        {/* 1. Sticky Header */}
+        <StickyHeader serviceName={service.name} />
 
-      {/* 2. Hero Section */}
-      <HeroSection service={service} />
+        {/* 2. Hero Section */}
+        <HeroSection service={service} />
 
-      {/* 3. What's Included Section */}
-      <WhatsIncluded service={service} />
+        {/* 3. What's Included Section */}
+        <WhatsIncluded service={service} />
 
-      {/* 4. Why Choose This Service Section */}
-      <WhyChoose service={service} />
+        {/* 4. Local Benefits Section */}
+        <LocalBenefits service={service} />
 
-      {/* 5. Process Section */}
-      <Process service={service} />
+        {/* 5. Service Areas Section */}
+        <ServiceAreas service={service} />
 
-      {/* 6. FAQ Accordion Section */}
-      <FAQAccordion service={service} />
+        {/* 6. Why Choose This Service Section */}
+        <WhyChoose service={service} />
 
-      {/* 7. Final CTA Section */}
-      <FinalCTA service={service} />
-    </div>
+        {/* 7. Process Section */}
+        <Process service={service} />
+
+        {/* 8. FAQ Accordion Section */}
+        <FAQAccordion service={service} />
+
+        {/* 9. Final CTA Section */}
+        <FinalCTA service={service} />
+      </div>
     </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { businessInfo } from '../lib/data';
 
 export default function Navigation() {
@@ -25,10 +26,14 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="text-2xl font-bold text-teal-400">
-                One Detail
-                <span className="text-white ml-2">At A Time</span>
-              </div>
+              <Image
+                src="/images/logo.svg"
+                alt="One Detail At A Time LLC - Professional Car Detailing"
+                width={180}
+                height={50}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
 

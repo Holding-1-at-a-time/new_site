@@ -92,7 +92,7 @@ export default function RootLayout({
     "@type": "LocalBusiness",
     "@id": "https://onedetailatatime.com",
     "name": "One Detail At A Time LLC",
-    "image": "/images/logo.jpg",
+    "image": "/images/logo.svg",
     "description": "Professional car detailing services in San Antonio, TX. We bring your vehicle back to showroom condition with attention to every detail.",
     "address": {
       "@type": "PostalAddress",
