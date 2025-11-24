@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * ServicePage component
+ * 
+ * This component renders a page for a single service, including its name, description, price, duration, features, and benefits.
+ * 
+ * @returns {JSX.Element} The rendered component
+ */
+
 export default function ServicePage() {
   const jsonLd = {
     "@context": "https://schema.org",

@@ -3,9 +3,19 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/data";
+import { Label } from "@radix-ui/react-label";
+import { Input, Textarea } from "@/components/formElements";
+import { toast } from "sonner";
+
+/**
+ * A form component for sending a message to One Detail At A Time.
+ * The form includes fields for name, email, phone, service, and message.
+ * The form is submitted to a Google Forms URL, which is simulated in this example.
+ * The form also includes a toast notification for success and failure.
+ * @returns {JSX.Element} The contact form component.
+ * */
 
 export function ContactForm() {
-    const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = React.useState(false);
 
     async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -28,17 +38,15 @@ export function ContactForm() {
             // Simulate form submission - replace with actual Google Forms integration
             await new Promise(resolve => setTimeout(resolve, 1000));
 
-            toast({
-                title: "Message sent!",
+            toast.success("Message sent!", {
                 description: "We'll get back to you within 24 hours.",
-            });
+            })
 
-            (event.target as HTMLFormElement).reset();
+                ; (event.target as HTMLFormElement).reset();
         } catch (error) {
-            toast({
-                title: "Error",
+            toast.error("Error", {
+
                 description: "Failed to send message. Please try again or call us directly.",
-                variant: "destructive",
             });
         } finally {
             setIsSubmitting(false);

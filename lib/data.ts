@@ -120,7 +120,7 @@ export const services: Service[] = [
             "Enhances resale value",
             "Long-lasting results"
         ],
-        price: "$89+",
+        price: "$99+",
         duration: "1-2 hours",
         process: [
             {
