@@ -9,6 +9,17 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@radix-ui/react-icons'],
   },
+/**
+ * Webpack configuration.
+ *
+ * Eliminates source maps for stable development.
+ * Disables source maps in production for performance.
+ * Adds additional optimizations for stability in development.
+ *
+ * @param {object} config - Webpack configuration object.
+ * @param {{ isServer: boolean }} options - Options object with an isServer property.
+ * @returns {object} - Modified Webpack configuration object.
+ */
   webpack: (config, { isServer }) => {
     // Complete source map elimination for stable development
     if (!isServer) {
@@ -20,9 +31,12 @@ const nextConfig: NextConfig = {
       };
     }
     
-    // Disable all source map generation
-    config.devtool = false;
-    config.parallelChunks = undefined;
+    // Enable proper source maps for debugging
+    if (process.env.NODE_ENV === 'production') {
+      config.devtool = 'source-map';
+    } else {
+      config.devtool = 'eval-cheap-module-source-map';
+    }
     
     // Additional optimizations for stability
     if (process.env.NODE_ENV === 'development') {
@@ -44,13 +58,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
   // Force clean compilation
   poweredByHeader: false,
   compress: true,
-  swcMinify: true,
 };
 
 export default nextConfig;

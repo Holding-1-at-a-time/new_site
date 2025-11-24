@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       url: `https://www.odaat1.com/services/${service.slug}`,
     },
   };
-  };
+}
 
 export default function ServicePage({ params }: ServicePageProps) {
   const { slug } = params;

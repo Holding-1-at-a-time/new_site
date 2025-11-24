@@ -87,10 +87,10 @@ export default function FAQAccordion({ service }: FAQAccordionProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`tel:${businessInfo.phone.replace(/[^\d]/g, '')}`}
+                href={`tel:${businessInfo.phone?.replace(/[^\d]/g, '') ?? ''}`}
                 className="inline-block bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
               >
-                Call {businessInfo.phone}
+                Call {businessInfo.phone ?? 'Us'}
               </a>
               <a
                 href={`mailto:${businessInfo.email}`}

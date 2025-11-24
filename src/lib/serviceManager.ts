@@ -242,8 +242,8 @@ export function createService(
     duration?: string;
     customBenefits?: string[];
     customIncludes?: string[];
-    customProcess?: any[];
-    customFaqs?: any[];
+    customProcess?: Array<{ id: number; title: string; description: string; duration: string }>;
+    customFaqs?: Array<{ question: string; answer: string }>;
     customImages?: string[];
   } = {}
 ): Service {
@@ -295,10 +295,10 @@ export function removeService(services: Service[], serviceSlug: string): Service
 }
 
 // Update an existing service
-export function updateService(services: Service[], updatedService: Service): Service[] {
-  const index = services.findIndex(service => service.slug === updatedService.slug);
+export function updateService(services: Service[], originalSlug: string, updatedService: Service): Service[] {
+  const index = services.findIndex(service => service.slug === originalSlug);
   if (index === -1) {
-    throw new Error(`Service with slug "${updatedService.slug}" not found`);
+    throw new Error(`Service with slug "${originalSlug}" not found`);
   }
   
   const newServices = [...services];

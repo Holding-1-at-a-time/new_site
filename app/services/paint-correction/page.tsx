@@ -16,19 +16,19 @@ const SERVICE_AREAS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Interior Deep Cleansing San Antonio | One Detail At A Time',
-  description: 'Comprehensive interior detailing with steam cleaning, stain removal, and odor elimination. Professional upholstery and carpet treatment. Serving Alamo Heights, Stone Oak, and surrounding areas.',
+  title: 'Paint Correction San Antonio | One Detail At A Time',
+  description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish. Serving Alamo Heights, Stone Oak, and surrounding areas.',
   keywords: [
-    "interior detailing San Antonio",
-    "car interior cleaning Alamo Heights",
-    "upholstery cleaning San Antonio TX",
-    "steam cleaning car interior",
-    "pet hair removal San Antonio",
-    "car odor removal near me"
+    "paint correction San Antonio",
+    "swirl mark removal Alamo Heights",
+    "scratch removal San Antonio TX",
+    "car polishing near me",
+    "paint restoration San Antonio",
+    "clear coat correction Texas"
 ],
   openGraph: {
-    title: 'Interior Deep Cleansing | San Antonio Auto Detailing',
-    description: 'Comprehensive interior detailing with steam cleaning, stain removal, and odor elimination. Professional upholstery and carpet treatment.',
+    title: 'Paint Correction | San Antonio Auto Detailing',
+    description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.',
     type: 'website',
     locale: 'en_US',
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Interior Deep Cleansing',
+  serviceType: 'Paint Correction',
   provider: {
     '@type': 'AutoRepair',
     name: 'One Detail At A Time LLC',
@@ -69,14 +69,14 @@ const jsonLd = {
       reviewCount: '28',
     },
   },
-  description: 'Comprehensive interior detailing with steam cleaning, stain removal, and odor elimination. Professional upholstery and carpet treatment.',
+  description: 'Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.',
   areaServed: SERVICE_AREAS.map(area => ({
     '@type': 'City',
     name: `${area}, TX`,
   })),
   offers: {
     '@type': 'Offer',
-    price: '175',
+    price: '400',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
   },
@@ -101,30 +101,30 @@ export default function ServicePage() {
                 ← Home
               </Link>
               <a
-                href={`tel:${businessInfo.phone.replace(/[^\d]/g, '')}`}
+                href={`tel:${businessInfo.phone?.replace(/[^\d]/g, '') ?? ''}`}
                 className="bg-primary hover:bg-primary-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
               >
-                {businessInfo.phone}
+                {businessInfo.phone ?? 'Contact Us'}
               </a>
             </div>
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h1 className="text-6xl md:text-7xl font-bold mb-8 text-balance">
-              Interior Deep Cleansing
+              Paint Correction
               <span className="block text-4xl md:text-5xl text-primary mt-4">San Antonio, TX</span>
             </h1>
             <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Comprehensive interior detailing with steam cleaning, stain removal, and odor elimination. Professional upholstery and carpet treatment.
+              Multi-stage paint correction removes swirls, scratches, and oxidation. Professional machine polishing for flawless finish.
             </p>
             <div className="flex flex-wrap gap-6 items-center justify-center mb-12">
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Starting At</div>
-                <div className="text-primary font-bold text-3xl">$175</div>
+                <div className="text-primary font-bold text-3xl">$400</div>
               </div>
               <div className="bg-gray-800/50 px-8 py-4 rounded-xl border border-gray-700">
                 <div className="text-gray-400 text-sm mb-1">Duration</div>
-                <div className="text-white font-semibold text-2xl">3-4 hours</div>
+                <div className="text-white font-semibold text-2xl">6-8 hours</div>
               </div>
             </div>
             <a
@@ -162,7 +162,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">What's Included</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Vacuum all surfaces and crevices","Steam cleaning for fabric and carpet","Leather conditioning and protection","Dashboard and console detailing","Door jamb cleaning","Pet hair removal","Odor elimination"].map((feature, index) => (
+              {["Multi-stage paint correction","Removes swirl marks and light scratches","Eliminates water spots and oxidation","Restores paint clarity and depth","Machine polishing with professional tools","Paint thickness measurement"].map((feature, index) => (
                 <div key={index} className="flex items-start gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors">
                   <svg className="w-7 h-7 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -178,7 +178,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Why San Antonio Chooses Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {["Professional steam cleaning eliminates bacteria and allergens","Leather treatment prevents cracking in Texas heat","Complete odor elimination including smoke and pet smells","Serving San Antonio with appointment-only personalized service"].map((benefit, index) => (
+              {["IDA-certified paint correction specialist in San Antonio","Mirror-like finish removes years of damage","Perfect preparation for ceramic coating","Increases vehicle value and appearance dramatically"].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-gray-800/30 rounded-xl border border-gray-700">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +196,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{"step":1,"title":"Interior Assessment","description":"Evaluate condition and problem areas"},{"step":2,"title":"Deep Vacuum","description":"Remove loose dirt and pet hair"},{"step":3,"title":"Steam Clean & Extract","description":"Deep clean all fabric surfaces"},{"step":4,"title":"Surface Detail & Protect","description":"Clean and protect interior surfaces"}].map((step) => (
+              {[{"step":1,"title":"Paint Inspection","description":"Assess damage and measure thickness"},{"step":2,"title":"Decontamination","description":"Remove all surface contaminants"},{"step":3,"title":"Compound & Polish","description":"Multi-stage correction process"},{"step":4,"title":"Final Inspection","description":"Verify results under LED lighting"}].map((step) => (
                 <div key={step.step} className="text-center">
                   <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-3xl shadow-lg shadow-primary/20">
                     {step.step}
@@ -213,7 +213,7 @@ export default function ServicePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Common Questions</h2>
             <div className="space-y-6">
-              {[{"question":"Do you remove pet hair in San Antonio?","answer":"Yes! We specialize in thorough pet hair removal using professional tools. Serving all of San Antonio including Alamo Heights and Stone Oak."},{"question":"Can you eliminate smoke odor from cars?","answer":"Absolutely. Our deep cleansing process with ozone treatment eliminates smoke, pet, and other stubborn odors completely."},{"question":"How long does interior detailing take?","answer":"Typically 3-4 hours for comprehensive interior deep cleansing. Appointment required at our San Antonio location."}].map((faq, index) => (
+              {[{"question":"How much does paint correction cost in San Antonio?","answer":"Our professional paint correction starts at $400. Price varies based on vehicle size and paint condition. Serving all of San Antonio."},{"question":"Will paint correction remove all scratches?","answer":"We can remove or significantly reduce most light to moderate scratches. Deep scratches penetrating clear coat may require touch-up."},{"question":"Do you offer mobile paint correction?","answer":"We operate from our San Antonio location at 11692 Bricken Circle for best results with professional lighting and equipment."}].map((faq, index) => (
                 <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{faq.question}</h3>
                   <p className="text-gray-300 text-lg leading-relaxed">{faq.answer}</p>
@@ -225,9 +225,9 @@ export default function ServicePage() {
 
         <section className="py-32 bg-gradient-to-br from-primary/10 to-primary/5 border-y border-primary/20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-5xl font-bold mb-6">Ready for Interior Deep Cleansing?</h2>
+            <h2 className="text-5xl font-bold mb-6">Ready for Paint Correction?</h2>
             <p className="text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              Schedule your interior deep cleansing service in San Antonio today
+              Schedule your paint correction service in San Antonio today
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
               <a
@@ -236,12 +236,14 @@ export default function ServicePage() {
               >
                 Call {businessInfo.phone}
               </a>
-              <Link
-                href="/contact"
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=11692+Bricken+Circle+San+Antonio+TX+78233"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-gray-700 text-white px-12 py-5 rounded-lg font-bold text-xl transition-all hover:scale-105 border border-gray-700"
               >
                 Get Directions
-              </Link>
+              </a>
             </div>
             <div className="text-gray-400">
               <p className="mb-2">11692 Bricken Circle, San Antonio, TX 78233</p>

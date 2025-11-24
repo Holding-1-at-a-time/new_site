@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "full service car wash near me",
     "complete car cleaning San Antonio",
     "auto detailing package Texas"
-],
+  ],
   openGraph: {
     title: 'Full Detail Package | San Antonio Auto Detailing',
     description: 'Complete interior and exterior transformation. Includes hand wash, sealant, interior deep clean, and 1-step paint correction.',
@@ -61,7 +61,7 @@ const jsonLd = {
     },
     areaServed: SERVICE_AREAS.map(area => ({
       '@type': 'City',
-      name: area,
+      name: `${area}, TX`,
     })),
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -83,18 +83,28 @@ const jsonLd = {
 };
 
 export default function ServicePage() {
+  /**
+   * ServicePage component.
+   *
+   * This component renders the main service page for One Detail At A Time LLC.
+   *
+   * It includes a hero section with a call-to-action to book a full detail package,
+   * a section highlighting the benefits of the full detail package,
+   * a section listing the services included in the full detail package,
+   * and a section with a map and contact information.
+   */
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       <div className="min-h-screen bg-gray-950">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-          
+
           <div className="fixed top-0 left-0 right-0 z-50 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
               <Link href="/" className="text-gray-400 hover:text-primary transition-colors">
@@ -162,7 +172,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">What's Included</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {["Complete exterior hand wash & sealant","Full interior deep cleansing","1-Step paint correction","Wheel and tire detailing","Engine bay cleaning","All glass and windows","Door jambs and trunk"].map((feature, index) => (
+              {["Complete exterior hand wash & sealant", "Full interior deep cleansing", "1-Step paint correction", "Wheel and tire detailing", "Engine bay cleaning", "All glass and windows", "Door jambs and trunk"].map((feature, index) => (
                 <div key={index} className="flex items-start gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors">
                   <svg className="w-7 h-7 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -178,7 +188,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Why San Antonio Chooses Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {["Best value - combines multiple services at discounted rate","Complete transformation inside and out","Show-car quality results from IDA-certified professional","Perfect for San Antonio residents wanting comprehensive care"].map((benefit, index) => (
+              {["Best value - combines multiple services at discounted rate", "Complete transformation inside and out", "Show-car quality results from IDA-certified professional", "Perfect for San Antonio residents wanting comprehensive care"].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 p-6 bg-gray-800/30 rounded-xl border border-gray-700">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -196,7 +206,7 @@ export default function ServicePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Our Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[{"step":1,"title":"Complete Assessment","description":"Evaluate entire vehicle condition"},{"step":2,"title":"Exterior Correction","description":"Wash, decontaminate, correct, seal"},{"step":3,"title":"Interior Restoration","description":"Deep clean all interior surfaces"},{"step":4,"title":"Final Details","description":"Address remaining areas and inspect"}].map((step) => (
+              {[{ "step": 1, "title": "Complete Assessment", "description": "Evaluate entire vehicle condition" }, { "step": 2, "title": "Exterior Correction", "description": "Wash, decontaminate, correct, seal" }, { "step": 3, "title": "Interior Restoration", "description": "Deep clean all interior surfaces" }, { "step": 4, "title": "Final Details", "description": "Address remaining areas and inspect" }].map((step) => (
                 <div key={step.step} className="text-center">
                   <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-bold text-3xl shadow-lg shadow-primary/20">
                     {step.step}
@@ -213,7 +223,7 @@ export default function ServicePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl font-bold mb-16 text-center">Common Questions</h2>
             <div className="space-y-6">
-              {[{"question":"What is included in full detail package?","answer":"Complete interior deep clean, exterior hand wash with sealant, 1-step paint correction, wheels, tires, glass, and engine bay. Everything your car needs."},{"question":"How long does full detailing take in San Antonio?","answer":"Full detail package takes 6-8 hours. Appointment required at our San Antonio location for best results."},{"question":"Is full detail worth it vs. regular car wash?","answer":"Absolutely! Full detail restores and protects your vehicle, extending its life and value. Much more than a basic wash."}].map((faq, index) => (
+              {[{ "question": "What is included in full detail package?", "answer": "Complete interior deep clean, exterior hand wash with sealant, 1-step paint correction, wheels, tires, glass, and engine bay. Everything your car needs." }, { "question": "How long does full detailing take in San Antonio?", "answer": "Full detail package takes 6-8 hours. Appointment required at our San Antonio location for best results." }, { "question": "Is full detail worth it vs. regular car wash?", "answer": "Absolutely! Full detail restores and protects your vehicle, extending its life and value. Much more than a basic wash." }].map((faq, index) => (
                 <div key={index} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
                   <h3 className="text-2xl font-bold mb-4 text-primary">{faq.question}</h3>
                   <p className="text-gray-300 text-lg leading-relaxed">{faq.answer}</p>
@@ -236,15 +246,17 @@ export default function ServicePage() {
               >
                 Call {businessInfo.phone}
               </a>
-              <Link
-                href="/contact"
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(businessInfo.address.streetAddress + ', ' + businessInfo.address.city + ', ' + businessInfo.address.state + ' ' + businessInfo.address.zipCode)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-gray-700 text-white px-12 py-5 rounded-lg font-bold text-xl transition-all hover:scale-105 border border-gray-700"
               >
                 Get Directions
-              </Link>
+              </a>
             </div>
-            <div className="text-gray-400">
-              <p className="mb-2">11692 Bricken Circle, San Antonio, TX 78233</p>
+            <div className="text-gray-400"> 
+              <p className="mb-2">{businessInfo.address.streetAddress}, San Antonio, TX 78233</p>
               <p>Serving Alamo Heights, Stone Oak & Greater San Antonio</p>
               <p className="mt-2">10% Donated to Junior Achievement of South Texas</p>
             </div>
